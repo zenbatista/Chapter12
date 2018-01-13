@@ -62,20 +62,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-98-hrR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-98-hrR">
                                 <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pl4-n2-tAu" customClass="EmojiArtView" customModule="Chapter11" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="0.0" width="695.5" height="768"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl4-n2-tAu" customClass="EmojiArtView" customModule="Chapter11" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                         <color key="backgroundColor" red="0.063411064445972443" green="0.84176391363143921" blue="0.25561249256134033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90894812345504761" green="0.87881582975387573" blue="0.43473383784294128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pl4-n2-tAu" secondAttribute="trailing" id="aLC-uW-wT6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pl4-n2-tAu" secondAttribute="bottom" id="bz7-Yi-InZ"/>
+                                    <constraint firstItem="Pl4-n2-tAu" firstAttribute="leading" secondItem="QBM-98-hrR" secondAttribute="leading" id="eHe-aN-OXi"/>
+                                    <constraint firstItem="Pl4-n2-tAu" firstAttribute="top" secondItem="QBM-98-hrR" secondAttribute="top" id="x0O-SS-cAw"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QBM-98-hrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="033-UD-DNC"/>
+                            <constraint firstItem="QBM-98-hrR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="4md-m8-Ymq"/>
+                            <constraint firstItem="QBM-98-hrR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k3D-ZW-eiW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QBM-98-hrR" secondAttribute="trailing" id="wtM-NS-Z7b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
