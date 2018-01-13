@@ -67,14 +67,20 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-Io-sgg">
                                         <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="768" id="TwZ-hL-qNK"/>
+                                            <constraint firstAttribute="width" priority="250" constant="704" id="Wk4-A1-j6S"/>
+                                        </constraints>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90894812345504761" green="0.87881582975387573" blue="0.43473383784294128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gDK-Io-sgg" secondAttribute="bottom" id="NTz-S8-ziV"/>
-                                    <constraint firstAttribute="trailing" secondItem="gDK-Io-sgg" secondAttribute="trailing" id="bua-Bb-S68"/>
-                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="top" secondItem="QBM-98-hrR" secondAttribute="top" id="pBI-tH-84k"/>
-                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="leading" secondItem="QBM-98-hrR" secondAttribute="leading" id="ua0-zA-9sc"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="centerY" secondItem="QBM-98-hrR" secondAttribute="centerY" id="9Nb-K9-ldv"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gDK-Io-sgg" secondAttribute="bottom" id="NTz-S8-ziV"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="centerX" secondItem="QBM-98-hrR" secondAttribute="centerX" id="RHU-30-kk1"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gDK-Io-sgg" secondAttribute="trailing" id="bua-Bb-S68"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QBM-98-hrR" secondAttribute="top" id="pBI-tH-84k"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QBM-98-hrR" secondAttribute="leading" id="ua0-zA-9sc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,6 +96,8 @@
                     <connections>
                         <outlet property="dropZone" destination="QBM-98-hrR" id="Sos-hZ-vLB"/>
                         <outlet property="scrollView" destination="gDK-Io-sgg" id="Zf5-O9-K2m"/>
+                        <outlet property="scrollViewHeight" destination="TwZ-hL-qNK" id="Fmo-5u-0vW"/>
+                        <outlet property="scrollViewWidth" destination="Wk4-A1-j6S" id="g0y-iC-6dZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
