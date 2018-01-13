@@ -65,17 +65,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-98-hrR">
                                 <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl4-n2-tAu" customClass="EmojiArtView" customModule="Chapter11" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
-                                        <color key="backgroundColor" red="0.063411064445972443" green="0.84176391363143921" blue="0.25561249256134033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-Io-sgg">
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90894812345504761" green="0.87881582975387573" blue="0.43473383784294128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Pl4-n2-tAu" secondAttribute="trailing" id="aLC-uW-wT6"/>
-                                    <constraint firstAttribute="bottom" secondItem="Pl4-n2-tAu" secondAttribute="bottom" id="bz7-Yi-InZ"/>
-                                    <constraint firstItem="Pl4-n2-tAu" firstAttribute="leading" secondItem="QBM-98-hrR" secondAttribute="leading" id="eHe-aN-OXi"/>
-                                    <constraint firstItem="Pl4-n2-tAu" firstAttribute="top" secondItem="QBM-98-hrR" secondAttribute="top" id="x0O-SS-cAw"/>
+                                    <constraint firstAttribute="bottom" secondItem="gDK-Io-sgg" secondAttribute="bottom" id="NTz-S8-ziV"/>
+                                    <constraint firstAttribute="trailing" secondItem="gDK-Io-sgg" secondAttribute="trailing" id="bua-Bb-S68"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="top" secondItem="QBM-98-hrR" secondAttribute="top" id="pBI-tH-84k"/>
+                                    <constraint firstItem="gDK-Io-sgg" firstAttribute="leading" secondItem="QBM-98-hrR" secondAttribute="leading" id="ua0-zA-9sc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,7 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="QBM-98-hrR" id="Sos-hZ-vLB"/>
-                        <outlet property="emojiArtView" destination="Pl4-n2-tAu" id="nQe-mC-wrX"/>
+                        <outlet property="scrollView" destination="gDK-Io-sgg" id="Zf5-O9-K2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
