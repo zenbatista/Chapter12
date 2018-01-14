@@ -15,17 +15,17 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
     UICollectionViewDragDelegate,
     UICollectionViewDropDelegate
 {
-
     
- 
-
+    
+    
+    
     @IBOutlet weak var dropZone: UIView! {
         
         didSet {
             dropZone.addInteraction(UIDropInteraction(delegate: self))
-               }
         }
-   
+    }
+    
     
     
     var emojiArtView = EmojiArtView()
@@ -142,26 +142,31 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         
     {
         let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
-            for item in coordinator.items {
-                if let sourceIndexPath = item.sourceIndexPath {
-                    if let attributedString = item.dragItem.localObject as? NSAttributedString {
-                        collectionView.performBatchUpdates( {
-                            emojis.remove(at: sourceIndexPath.item)
-                            emojis.insert(attributedString.string, at: destinationIndexPath.item)
-                            collectionView.deleteItems(at: [sourceIndexPath])
-                            collectionView.insertItems(at: [destinationIndexPath])
-                        })
-                        
-                        coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
-                        
-                       
-                    }
+        for item in coordinator.items {
+            if let sourceIndexPath = item.sourceIndexPath {
+                if let attributedString = item.dragItem.localObject as? NSAttributedString {
+                    collectionView.performBatchUpdates( {
+                        emojis.remove(at: sourceIndexPath.item)
+                        emojis.insert(attributedString.string, at: destinationIndexPath.item)
+                        collectionView.deleteItems(at: [sourceIndexPath])
+                        collectionView.insertItems(at: [destinationIndexPath])
+                    })
+                    
+                    coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+                    
+                    
                 }
+            } else {
+                let placeholderContext = coordinator.drop(
+                item.dragItem,
+                to: UICollectionViewDropPlaceholder(insertionIndexPath: destinationIndexPath, reuseIdentifier: "DropPlacehoderCell")
+                )
             }
         }
-        
+    }
     
-
+    
+    
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSURL.self) && session.canLoadObjects(ofClass: UIImage.self)
     }
@@ -193,6 +198,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         }
         
     }
-
+    
     
 }
+
