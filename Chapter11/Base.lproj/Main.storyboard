@@ -63,10 +63,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-98-hrR">
-                                <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
+                                <rect key="frame" x="0.0" y="108" width="704" height="660"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-Io-sgg">
-                                        <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="660"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="768" id="TwZ-hL-qNK"/>
                                             <constraint firstAttribute="width" priority="250" constant="704" id="Wk4-A1-j6S"/>
@@ -83,18 +83,60 @@
                                     <constraint firstItem="gDK-Io-sgg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QBM-98-hrR" secondAttribute="leading" id="ua0-zA-9sc"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-e3-bgU">
+                                <rect key="frame" x="0.0" y="20" width="703.5" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="qS9-E7-pjB"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IEc-vx-TMG">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiCell" id="gSh-PP-fIX" customClass="EmojiCollectionViewCell" customModule="Chapter11" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oQ-eP-4Mm">
+                                                    <rect key="frame" x="5.5" y="1.5" width="69" height="77"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="8oQ-eP-4Mm" firstAttribute="centerY" secondItem="gSh-PP-fIX" secondAttribute="centerY" id="VXy-eW-1by"/>
+                                            <constraint firstItem="8oQ-eP-4Mm" firstAttribute="centerX" secondItem="gSh-PP-fIX" secondAttribute="centerX" id="oHG-tW-nqH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="8oQ-eP-4Mm" id="CBn-86-lXK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QBM-98-hrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="033-UD-DNC"/>
-                            <constraint firstItem="QBM-98-hrR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="4md-m8-Ymq"/>
+                            <constraint firstItem="QBM-98-hrR" firstAttribute="top" secondItem="SDd-e3-bgU" secondAttribute="bottom" constant="8" symbolic="YES" id="1Ty-Xk-h3r"/>
+                            <constraint firstItem="SDd-e3-bgU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9cW-NZ-8e9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SDd-e3-bgU" secondAttribute="trailing" id="NXM-wg-Ygf"/>
                             <constraint firstItem="QBM-98-hrR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k3D-ZW-eiW"/>
+                            <constraint firstItem="SDd-e3-bgU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kLl-tQ-pVI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QBM-98-hrR" secondAttribute="trailing" id="wtM-NS-Z7b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="QBM-98-hrR" id="Sos-hZ-vLB"/>
+                        <outlet property="emojiCollectionView" destination="SDd-e3-bgU" id="uQg-m1-v0e"/>
                         <outlet property="scrollView" destination="gDK-Io-sgg" id="Zf5-O9-K2m"/>
                         <outlet property="scrollViewHeight" destination="TwZ-hL-qNK" id="Fmo-5u-0vW"/>
                         <outlet property="scrollViewWidth" destination="Wk4-A1-j6S" id="g0y-iC-6dZ"/>
